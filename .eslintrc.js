@@ -11,10 +11,11 @@ module.exports = {
     ],
     "overrides": [
     ],
-    "parser": "@typescript-eslint/parser",
+    "parser": "vue-eslint-parser",
     "parserOptions": {
         "ecmaVersion": "latest",
-        "sourceType": "module"
+        "sourceType": "module",
+        "parser": "@typescript-eslint/parser",
     },
     "plugins": [
         "vue",
@@ -30,6 +31,11 @@ module.exports = {
                     "{}": false
                 }
             }
-        ]
+        ],
+        // indent: [2, 2, { SwitchCase: 1 }],
+        "no-console": "off",
+        "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
+        "no-useless-escape": "off",
+        "vue/no-multiple-template-root": "off"
     }
 }
