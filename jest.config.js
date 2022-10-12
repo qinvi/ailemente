@@ -19,6 +19,8 @@ module.exports = {
         "@components/(.*)": "src/components/$1",
         "@styles/(.*)": "src/styles/$1",
     },
+    collectCoverage: true,
+    coverageReporters: ["json", "html"],
     // 只执行 spec.js 结尾的文件
     testMatch: ['**/?(*.)+(spec).[jt]s?(x)']
 }
