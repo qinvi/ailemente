@@ -12,7 +12,7 @@ export default {
 
 <script setup lang="ts"></script>
 <style lang="scss">
-@import 'styles/mixin.scss';
+@import '@styles/mixin.scss';
 
 @include b(main) {
   display: block;
