@@ -29,7 +29,25 @@
     <el-button size="small"> 按钮 </el-button>
   </el-container>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { reactive, watchEffect } from 'vue'
+
+const target = {}
+const receiverOuter = {}
+
+const proxyReceiver = new Proxy(target, {
+  set(target: any, key, value, receiver) {
+    // let res = Reflect.set(target, key, value, receiver)
+    target[key] = value
+    // let res = Reflect.set(target, key, value, receiver)
+    // console.log('set')
+    return true
+  },
+})
+
+Reflect.set(proxyReceiver, 'a', 2) // true
+console.log(target, proxyReceiver, receiverOuter)
+</script>
 
 <style lang="scss">
 body {
